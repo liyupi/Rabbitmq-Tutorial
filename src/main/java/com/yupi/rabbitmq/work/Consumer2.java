@@ -20,7 +20,7 @@ public class Consumer2 {
     public static void main(String[] args) throws IOException, TimeoutException {
         Connection connection = ConnectionUtils.newConnection();
         Channel channel = connection.createChannel();
-        // 每个消费者发送确认消息前，最多向其发送1条消息，限制消费者每次只能处理1条消息
+        // 服务质量保证（每个消费者发送确认消息前，最多向其发送1条消息，限制消费者每次只能处理1条消息）
         int prefetchCount = 1;
         channel.basicQos(prefetchCount);
         DefaultConsumer defaultConsumer = new DefaultConsumer(channel) {

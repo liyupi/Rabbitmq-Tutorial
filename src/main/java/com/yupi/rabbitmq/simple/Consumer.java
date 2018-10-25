@@ -23,8 +23,6 @@ public class Consumer {
         Connection connection = ConnectionUtils.newConnection();
         // 创建通道
         Channel channel = connection.createChannel();
-        // 声明队列（生产者已创建队列，但是为了保险，再次声明）
-        channel.queueDeclare(QUQUE_NAME, false, false, false, null);
         // 创建消费者
         DefaultConsumer defaultConsumer = new DefaultConsumer(channel) {
             @Override
