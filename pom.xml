@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.yupi</groupId>
-    <artifactId>rabbitmq-queues</artifactId>
+    <artifactId>mq-examples</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>rabbitmq-queues</name>
-    <description>Demo project for Spring Boot</description>
+    <name>mq-examples</name>
+    <description>Examples for different mqs</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -28,6 +28,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-activemq</artifactId>
         </dependency>
 
         <dependency>

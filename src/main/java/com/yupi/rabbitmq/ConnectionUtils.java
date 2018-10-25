@@ -12,15 +12,20 @@ import java.util.concurrent.TimeoutException;
  * @author Yupi Li
  * @date 2018/10/22 21:35
  */
-public class MQConnectionUtils {
+public class ConnectionUtils {
 
-    public static Connection newConnection() throws IOException, TimeoutException {
-        ConnectionFactory factory = new ConnectionFactory();
+    private static ConnectionFactory factory;
+
+    static {
+        factory = new ConnectionFactory();
         factory.setHost("127.0.0.1");
         factory.setUsername("liyupi");
         factory.setPassword("123456");
         factory.setPort(5672);
         factory.setVirtualHost("/vhost_test");
+    }
+
+    public static Connection newConnection() throws IOException, TimeoutException {
         return factory.newConnection();
     }
 }

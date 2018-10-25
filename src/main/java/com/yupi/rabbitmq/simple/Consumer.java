@@ -1,7 +1,7 @@
 package com.yupi.rabbitmq.simple;
 
 import com.rabbitmq.client.*;
-import com.yupi.rabbitmq.MQConnectionUtils;
+import com.yupi.rabbitmq.ConnectionUtils;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -20,7 +20,7 @@ public class Consumer {
 
     public static void main(String[] args) throws IOException, TimeoutException, InterruptedException {
         // 创建连接
-        Connection connection = MQConnectionUtils.newConnection();
+        Connection connection = ConnectionUtils.newConnection();
         // 创建通道
         Channel channel = connection.createChannel();
         // 声明队列（生产者已创建队列，但是为了保险，再次声明）

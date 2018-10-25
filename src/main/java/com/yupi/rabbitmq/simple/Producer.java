@@ -2,7 +2,7 @@ package com.yupi.rabbitmq.simple;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
-import com.yupi.rabbitmq.MQConnectionUtils;
+import com.yupi.rabbitmq.ConnectionUtils;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
@@ -20,7 +20,7 @@ public class Producer {
 
     public static void main(String[] args) throws IOException, TimeoutException {
         // 建立MQ连接
-        Connection connection = MQConnectionUtils.newConnection();
+        Connection connection = ConnectionUtils.newConnection();
         // 创建通道
         Channel channel = connection.createChannel();
         // 创建队列
