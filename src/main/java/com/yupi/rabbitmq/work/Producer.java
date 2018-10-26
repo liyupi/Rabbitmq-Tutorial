@@ -21,9 +21,6 @@ public class Producer {
         Connection connection = ConnectionUtils.newConnection();
         Channel channel = connection.createChannel();
         channel.queueDeclare(QUEUE_NAME, false, false, false, null);
-        // 每个消费者发送确认消息前，最多向其发送1条消息，限制消费者每次只能处理1条消息
-        int prefetchCount = 1;
-        channel.basicQos(prefetchCount);
         for (int i = 0; i < 50; i++) {
             String msg = "this is my message " + i;
             channel.basicPublish("", QUEUE_NAME, null, msg.getBytes());
